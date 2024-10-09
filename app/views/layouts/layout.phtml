@@ -34,57 +34,22 @@
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 <script>
     const links = document.querySelectorAll('li a');
-    const customMenu = document.getElementById('custom-menu');
-    const menuContent = document.getElementById('menu-content');
     
     links.forEach(link => {
         link.addEventListener('click', (event) => {
-            event.preventDefault();
+            event.preventDefault(); // Evita el comportament per defecte dels enllaços
             const selectedMenu = link.getAttribute('data-menu');
             
-            let message = '';
-            let placeholder = '';
-            let actionPage = '';
-
-            if(selectedMenu == 'CREATE'){
-                message = 'Write the new to-do';
-                placeholder = 'New to-do';
-                actionPage = 'create.html';
-            }else if(selectedMenu == 'READ'){
-                message = 'What do you want to consult?';
-                placeholder = 'Consult';
-                actionPage = 'read.html';
-            }else if(selectedMenu == 'UPDATE'){
-                message = 'What do you want to modify?';
-                placeholder = 'Modify';
-                actionPage = 'update.html';
-            }else if(selectedMenu == 'DELETE'){
-                message = 'What do you want to delete?';
-                placeholder = 'Delete';
-                actionPage = 'delete.html';
+            // Redirecció segons l'etiqueta clicada
+            if (selectedMenu === 'CREATE') {
+                window.location.href = 'create.html';
+            } else if (selectedMenu === 'READ') {
+                window.location.href = 'read.html';
+            } else if (selectedMenu === 'UPDATE') {
+                window.location.href = 'update.html';
+            } else if (selectedMenu === 'DELETE') {
+                window.location.href = 'delete.html';
             }
-            
-            // Inserim el missatge i l'input dins el div `menuContent`
-            menuContent.innerHTML = `
-                <p>${message}</p>
-                <form id="menu-form">
-                    <input type="text" id="menu-input" class="border border-gray-300 p-2 mt-2 w-full" placeholder="${placeholder}">
-                    <button type="submit" class="bg-blue-500 text-white p-2 mt-2">Submit</button>
-                </form>`;
-            // Mostrem el menú centrat
-            customMenu.classList.remove('hidden');
-
-            // Escoltem l'enviament del formulari
-            const form = document.getElementById('menu-form');
-            form.addEventListener('submit', (e) => {
-                e.preventDefault(); // prevenir enviament per defecte
-
-                // Obtenim el valor de l'input
-                const inputValue = document.getElementById('menu-input').value;
-                
-                // Redirigim a la pàgina amb el valor introduït (passant-lo com a paràmetre si cal)
-                window.location.href = `${actionPage}?input=${encodeURIComponent(inputValue)}`;
-            });
         });
     });
 </script>
