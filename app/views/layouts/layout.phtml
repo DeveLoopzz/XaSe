@@ -4,8 +4,6 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Link for working on local-->
-    <!-- <link href="./style.css" rel="stylesheet">-->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="flex justify-center items-center h-screen bg-gray-100">
@@ -32,8 +30,7 @@
         <div id="menu-content"></div>
     </div>
 </div>
-<!--Script for working on local-->
-<!--<script src="/node_modules/flowbite/dist/flowbite.min.js"></script>-->
+
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 <script>
     const links = document.querySelectorAll('li a');
@@ -47,28 +44,47 @@
             
             let message = '';
             let placeholder = '';
+            let actionPage = '';
 
             if(selectedMenu == 'CREATE'){
                 message = 'Write the new to-do';
                 placeholder = 'New to-do';
+                actionPage = 'create.html';
             }else if(selectedMenu == 'READ'){
                 message = 'What do you want to consult?';
                 placeholder = 'Consult';
+                actionPage = 'read.html';
             }else if(selectedMenu == 'UPDATE'){
                 message = 'What do you want to modify?';
                 placeholder = 'Modify';
+                actionPage = 'update.html';
             }else if(selectedMenu == 'DELETE'){
                 message = 'What do you want to delete?';
                 placeholder = 'Delete';
+                actionPage = 'delete.html';
             }
             
             // Inserim el missatge i l'input dins el div `menuContent`
             menuContent.innerHTML = `
                 <p>${message}</p>
-                <input type="text" class="border border-gray-300 p-2 mt-2 w-full" placeholder="${placeholder}">`;
-
+                <form id="menu-form">
+                    <input type="text" id="menu-input" class="border border-gray-300 p-2 mt-2 w-full" placeholder="${placeholder}">
+                    <button type="submit" class="bg-blue-500 text-white p-2 mt-2">Submit</button>
+                </form>`;
             // Mostrem el menú centrat
             customMenu.classList.remove('hidden');
+
+            // Escoltem l'enviament del formulari
+            const form = document.getElementById('menu-form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // prevenir enviament per defecte
+
+                // Obtenim el valor de l'input
+                const inputValue = document.getElementById('menu-input').value;
+                
+                // Redirigim a la pàgina amb el valor introduït (passant-lo com a paràmetre si cal)
+                window.location.href = `${actionPage}?input=${encodeURIComponent(inputValue)}`;
+            });
         });
     });
 </script>
