@@ -23,7 +23,7 @@ class View
 	
 	public function __construct()
 	{
-	  $this->settings = new stdClass();
+	$this->settings = new stdClass(); // classe per castejar a objecte.
 	}
 
 	/**
@@ -54,19 +54,19 @@ class View
 	 */
 	public function render($viewScript)
 	{
-	  if ($viewScript && $this->_viewEnabled) {
+		if ($viewScript && $this->_viewEnabled) {
   		// renders the view script
   		$this->_renderViewScript($viewScript);
-	  }
+		}
 		
-	  if ($this->_isLayoutDisabled()) {
-	    echo $this->_content;
-	  }
-	  else {
+		if ($this->_isLayoutDisabled()) {
+		echo $this->_content;
+		}
+		else {
   		// includes the current view, which uses the "$this->content()" to output the 
   		// view script that was just rendered
   		include(ROOT_PATH . '/app/views/layouts/' . $this->_getLayout() . '.phtml');
-	  }
+		}
 	}
 	
 	/**
@@ -75,15 +75,15 @@ class View
 	 */
 	public function renderJson($data)
 	{
-	  $this->disableView();
-	  $this->disableLayout();
-	  
-	  // sets the json headers
-	  header('Cache-Control: no-cache, must-revalidate');
-	  header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-	  header('Content-type: application/json');
-	  
-	  echo json_encode($data);
+		$this->disableView();
+		$this->disableLayout();
+	
+		// sets the json headers
+		header('Cache-Control: no-cache, must-revalidate');
+		header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+		header('Content-type: application/json');
+	
+		echo json_encode($data);
 	}
 	
 	protected function _getLayout()
@@ -96,18 +96,18 @@ class View
 		$this->_layout = $layout;
 		
 		if ($layout) {
-		  $this->_enableLayout();
+		$this->_enableLayout();
 		}
 	}
 	
 	public function disableLayout()
 	{
-	  $this->_layoutEnabled = false;
+		$this->_layoutEnabled = false;
 	}
 	
 	public function disableView()
 	{
-	  $this->_viewEnabled = false;
+		$this->_viewEnabled = false;
 	}
 	
 	/**
@@ -167,7 +167,7 @@ class View
 	 */
 	protected function _enableLayout()
 	{
-	  $this->_layoutEnabled = true;
+		$this->_layoutEnabled = true;
 	}
 	
 	/**
@@ -175,6 +175,6 @@ class View
 	 */
 	protected function _isLayoutDisabled()
 	{
-	  return !$this->_layoutEnabled;
+		return !$this->_layoutEnabled;
 	}
 }
