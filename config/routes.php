@@ -13,5 +13,5 @@ $routes = array(
 	'/test' => 'test#index',
 	'/' => 'index#index',
 	'/calendar' => 'calendar#index',
-	'/prova' => 'calendari#index'
+	'/prova' => 'calen0dari#index'
 );
