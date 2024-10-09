@@ -8,7 +8,15 @@
  * 
  * '/' => 'index#index',
  * '/calendar' => 'calendar#index'
+ * 
+ * 
+ * 
+ * 
+ * 
  */
 $routes = array(
-	'/test' => 'test#index'
+	'/' => 'index#index',
+	'/test' => 'test#index',
+	"/update" => "index#update", 
+	'/delete' => 'index#delete',
 );
