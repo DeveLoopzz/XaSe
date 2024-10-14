@@ -6,53 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="flex justify-center items-center h-screen bg-gray-100">
+<body class="flex flex-col justify-center items-center h-screen bg-gray-100">
 
-<!--<?php echo $this->content(); ?>-->
+<?php echo $this->content(); ?>
 
-<div class="w-4/5 h-128 p-8 text-2xl font-semibold text-center text-gray-500 dark:text-gray-400">
-    <ul class="flex flex-wrap -mb-px justify-center">
-        <li class="me-2">
-            <a href="#" class="inline-block p-4 border-transparent rounded-t-lg text-gray-600 hover:text-blue-600 hover:border-blue-600 hover:border-opacity-100 transform hover:scale-125 transition-transform duration-300 dark:hover:text-gray-300" data-menu="CREATE">CREATE</a>
-        </li>
-        <li class="me-2">
-            <a href="#" class="inline-block p-4 border-transparent rounded-t-lg text-gray-600 hover:text-blue-600 hover:border-blue-600 hover:border-opacity-100 transform hover:scale-125 transition-transform duration-300 dark:hover:text-gray-300" data-menu="READ">READ</a>
-        </li>
-        <li class="me-2">
-            <a href="#" class="inline-block p-4 border-transparent rounded-t-lg text-gray-600 hover:text-blue-600 hover:border-blue-600 hover:border-opacity-100 transform hover:scale-125 transition-transform duration-300 dark:hover:text-gray-300" data-menu="UPDATE">UPDATE</a>
-        </li>
-        <li class="me-2">
-            <a href="#" class="inline-block p-4 border-transparent rounded-t-lg text-gray-600 hover:text-blue-600 hover:border-blue-600 hover:border-opacity-100 transform hover:scale-125 transition-transform duration-300 dark:hover:text-gray-300" data-menu="DELETE">DELETE</a>
-        </li>
-    </ul>
-    
-    <div id="custom-menu" class="hidden mt-4 p-4">
-        <div id="menu-content"></div>
-    </div>
-</div>
+<!--<?php include_once 'footer.phtml'; ?>-->
 
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-<script>
-    const links = document.querySelectorAll('li a');
-    
-    links.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault(); // Evita el comportament per defecte dels enllaços
-            const selectedMenu = link.getAttribute('data-menu');
-            
-            // Redirecció segons l'etiqueta clicada
-            if (selectedMenu === 'CREATE') {
-                window.location.href = 'create.phtml';
-            } else if (selectedMenu === 'READ') {
-                window.location.href = 'read.phtml';
-            } else if (selectedMenu === 'UPDATE') {
-                window.location.href = 'update.phtml';
-            } else if (selectedMenu === 'DELETE') {
-                window.location.href = 'delete.phtml';
-            }
-        });
-    });
-</script>
 
 </body>
 </html>

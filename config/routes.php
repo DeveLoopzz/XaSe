@@ -11,7 +11,9 @@
  */
 $routes = array(
 	'/test' => 'test#index',
-	'/' => 'index#index',
-	'/calendar' => 'calendar#index',
-	'/prova' => 'calen0dari#index'
+	'/' => 'view#index',
+	'/create' => 'view#create',
+	'/read' => 'view#read',
+	'/update' => 'application#update',
+	'/delete' => 'application#delete'
 );
