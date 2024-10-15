@@ -18,4 +18,15 @@ class TaskController {
         }
     }
 
+    public function delteTask($id) {
+        $task = $this->model->searchTask($id);
+        if($task) {
+            $this->model->deleteTask($id);
+            exit();
+        } else {
+            echo "task not found";
+        }
+    }
+
+
 }
