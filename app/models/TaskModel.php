@@ -35,7 +35,9 @@ class  TaskModel {
                 break;
             }
         }
-        file_put_contents($this->filepath, json_encode($tasks, JSON_PRETTY_PRINT));
+        $tasks = array_values($tasks);
+        $datajson['tareas'] = $tasks;
+        file_put_contents($this->filepath, json_encode($datajson, JSON_PRETTY_PRINT));
         }
 
     public function deleteTask($id) {
