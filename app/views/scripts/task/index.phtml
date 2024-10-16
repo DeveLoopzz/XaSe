@@ -29,9 +29,9 @@
             const selectedMenu = link.getAttribute('data-menu');
 
             if (selectedMenu === 'CREATE') {
-                window.location.href = '<?php echo $this->baseUrl(); ?>/create';
+                window.location.href = '<?php echo WEB_ROOT; ?>/create';
             } else if (selectedMenu === 'READ') {
-                window.location.href = '<?php echo $this->baseUrl(); ?>/read';
+                window.location.href = '<?php echo WEB_ROOT; ?>/read';
             } else if (selectedMenu === 'UPDATE') {
                 window.location.href = 'update.phtml';
             } else if (selectedMenu === 'DELETE') {

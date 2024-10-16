@@ -4,7 +4,7 @@
         
         <h1 class="text-3xl font-bold mb-4">Create a New To-Do</h1>
         
-        <form action= "<?php echo WEB_ROOT?>/tasks/add" method="POST" class="space-y-4">
+        <form action= "<?php echo WEB_ROOT?>/add" method="POST" class="space-y-4">
         
             <div class="mb-4">
                 <input type="text" name="user" class="border border-gray-300 p-2 rounded w-full" placeholder="User" />
@@ -13,7 +13,7 @@
                 <input type="text" name="title" class="border border-gray-300 p-2 rounded w-full" placeholder="To-Do" />
             </div>
             <div class="mb-4">
-                <textarea name="description" class="border border-gray-300 p-2 rounded w-full" placeholder="Description" rows="4"></textarea>
+                <input type="text" name="status" class="border border-gray-300 p-2 rounded w-full" placeholder="Status" />
             </div>
             <div class="mb-4">
             <label for="start-date" class="block text-sm font-medium text-gray-700">Start Date</label>
