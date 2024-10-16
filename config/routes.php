@@ -14,6 +14,9 @@ $routes = array(
 	'/' => 'view#index',
 	'/create' => 'view#create',
 	'/read' => 'view#read',
-	'/update' => 'application#update',
-	'/delete' => 'application#delete'
+	//'/update' => 'application#update',
+	//'/delete' => 'application#delete',
+	'/tasks/add' => 'task#add',
+	'/tasks/read' => 'task#read',
+	'/tasks/success' => 'view#success',
 );
