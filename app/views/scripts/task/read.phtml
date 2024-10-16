@@ -1,67 +1,45 @@
     <div class="text-center">
         <h1 class="text-3xl font-bold mb-4">Read To-Do</h1>
 
-        <!--<?php echo "<pre>"; ?>
-        <?php print_r($this->tasks); ?>
-        <?php echo "</pre>"; ?>
-        <?php 
-            if (isset($this->tasks)) {
-                echo "tasks està definit.<br>";
-                if (!empty($this->tasks)) {
-                    echo "tasks no està buit.<br>";
-                } else {
-                    echo "tasks està buit.<br>";
-                }
-            } else {
-                echo "tasks no està definit.<br>";
-            }
-
-            if (!empty($this->tasks) && is_array($this->tasks)) {
-                echo "Les tasques estan correctament definides i són un array.";
-            } else {
-                echo "No és un array o està buit.";
-            }
-        ?> -->
-
-    <?php if (!empty($this->tasks) && is_array($this->tasks)): ?>
-        <p>Dades trobades!</p>
+    <?php if ($this->tasks): ?>
+        <!-- <p>Dades ok</p> -->
         <div class="mt-4 p-4 bg-gray-100 rounded">
-        <h2 class="text-xl font-semibold">To-Do List</h2>
-        <?php foreach ($this->tasks as $task): ?>
-            <p>Estic dins del loop</p>
-            <form class="space-y-4">
+            <!-- <h2 class="text-xl font-semibold">To-Do List</h2><br> -->
+            <div class="flex flex-wrap justify-center space-x-4">
+            <?php foreach ($this->tasks as $index => $task): ?>
+                <!-- <p>Estic dins del foreach</p> -->
+                <div class="flex flex-col items-center w-1/4 p-2">
+                    <div class="border border-gray-300 rounded-lg p-4 w-full">
+                        <form class="space-y-4">
 
-                <div class="mb-4">
-                    <input type="text" name="user" class="border border-gray-300 p-2 rounded w-full" 
-                        value="<?= htmlspecialchars($task['user']) ?>" />
+                            <div class="mb-4">
+                                <span type="text" name="user"><?= htmlspecialchars($task['user']) ?></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <span type="text" name="title"><?= htmlspecialchars($task['title']) ?></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <span type="text" name="status"><?= htmlspecialchars($task['status']) ?></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="start-date" class="block text-sm font-medium text-gray-700">Start Date</label>
+                                <span type="text" id="start-date" name="start-date"><?= htmlspecialchars($task['start_date']) ?></span>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="end-date" class="block text-sm font-medium text-gray-700">End Date</label>
+                                <span type="text" id="end-date" name="end-date"><?= htmlspecialchars($task['end_date']) ?></span>
+                            </div>
+
+                        </form>
+                    <hr class="my-4">
+                    </div>
                 </div>
-
-                <div class="mb-4">
-                    <input type="text" name="title" class="border border-gray-300 p-2 rounded w-full" 
-                        value="<?= htmlspecialchars($task['title']) ?>" />
-                </div>
-
-                <div class="mb-4">
-                    <input type="text" name="status" class="border border-gray-300 p-2 rounded w-full" 
-                        value="<?= htmlspecialchars($task['status']) ?>" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="start-date" class="block text-sm font-medium text-gray-700">Start Date</label>
-                    <input type="date" id="start-date" name="start-date" class="border border-gray-300 p-2 rounded w-full" 
-                        value="<?= htmlspecialchars($task['start_date']) ?>" />
-                </div>
-
-                <div class="mb-4">
-                    <label for="end-date" class="block text-sm font-medium text-gray-700">End Date</label>
-                    <input type="date" id="end-date" name="end-date" class="border border-gray-300 p-2 rounded w-full" 
-                        value="<?= htmlspecialchars($task['end_date']) ?>" />
-                </div>
-
-            </form>
-
-            <hr class="my-4">
-        <?php endforeach; ?>
+            <?php endforeach; ?>
+            </div>
         </div>
     <?php else: ?>
         <p class="text-red-500 mt-4">No tasks found.</p>

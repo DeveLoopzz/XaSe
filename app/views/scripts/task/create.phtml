@@ -13,14 +13,18 @@
                 <input type="text" name="title" class="border border-gray-300 p-2 rounded w-full" placeholder="To-Do" />
             </div>
             <div class="mb-4">
-                <input type="text" name="status" class="border border-gray-300 p-2 rounded w-full" placeholder="Status" />
+                <select name="status" id="status" class="border border-gray-300 p-2 rounded w-full" placeholder="Status">
+                    <option value="pending">Pending</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
             </div>
             <div class="mb-4">
-            <label for="start-date" class="block text-sm font-medium text-gray-700">Start Date</label>
+                <label for="start_date" class="block text-sm font-medium text-gray-700">Start Date</label>
                 <input type="date" id="start-date" name="start-date" class="border border-gray-300 p-2 rounded w-full" />
             </div>
             <div class="mb-4">
-                <label for="end-date" class="block text-sm font-medium text-gray-700">End Date</label>
+                <label for="end_date" class="block text-sm font-medium text-gray-700">End Date</label>
                 <input type="date" id="end-date" name="end-date" class="border border-gray-300 p-2 rounded w-full" />
             </div>
                 
