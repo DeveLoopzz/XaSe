@@ -10,11 +10,11 @@
                         <form class="space-y-4">
 
                             <div class="mb-4">
-                                <span><?= htmlspecialchars($task['user']) ?></span>
+                                <span><?= $task['user'] ?></span>
                             </div>
 
                             <div class="mb-4">
-                                <span><?= htmlspecialchars($task['title']) ?></span>
+                                <span><?= $task['title'] ?></span>
                             </div>
 
                             <div class="mb-4">
@@ -25,18 +25,18 @@
                                         elseif ($task['status'] === 'completed') echo 'text-green-500';
                                     ?>
                                 ">
-                                    <?= htmlspecialchars($task['status']) ?>
+                                    <?= $task['status'] ?>
                                 </span>
                             </div>
 
                             <div class="mb-4">
                                 <label for="start-date" class="block text-sm font-medium text-gray-700">Start Date</label>
-                                <span><?= htmlspecialchars($task['start_date']) ?></span>
+                                <span><?= $task['start_date'] ?></span>
                             </div>
 
                             <div class="mb-4">
                                 <label for="end-date" class="block text-sm font-medium text-gray-700">End Date</label>
-                                <span><?= htmlspecialchars($task['end_date']) ?></span>
+                                <span><?= $task['end_date'] ?></span>
                             </div>
 
                         </form>
