@@ -3,41 +3,43 @@
     <div class="text-center">
         
         <h1 class="text-3xl font-bold mb-4">Create a New To-Do</h1>
-        
-        <form action= "<?php echo WEB_ROOT?>/add" method="POST" class="space-y-4">
-        
-            <div class="mb-4">
-                <input type="text" name="user" class="border border-gray-300 p-2 rounded w-full" placeholder="User" />
-            </div>
-            <div class="mb-4">
-                <input type="text" name="title" class="border border-gray-300 p-2 rounded w-full" placeholder="To-Do" />
-            </div>
-            <div class="mb-4">
-                <select name="status" id="status" class="border border-gray-300 p-2 rounded w-full" placeholder="Status">
-                    <option value="pending">Pending</option>
-                    <option value="in_progress">In Progress</option>
-                    <option value="completed">Completed</option>
-                </select>
-            </div>
-            <div class="mb-4">
-                <label for="start_date" class="block text-sm font-medium text-gray-700">Start Date</label>
-                <input type="text" id="start_date" name="start_date" class="border border-gray-300 p-2 rounded w-full" placeholder="dd/mm/aaaa" />
-            </div>
-            <div class="mb-4">
-                <label for="end_date" class="block text-sm font-medium text-gray-700">End Date</label>
-                <input type="text" id="end_date" name="end_date" class="border border-gray-300 p-2 rounded w-full" placeholder="dd/mm/aaaa" />
-            </div>
+        <div class="border border-gray-300 rounded-lg max-w-full p-14 text-center flex justify-center">
+                <form action= "<?php echo WEB_ROOT?>/add" method="POST" class="space-y-4">
                 
-            <div>
-                <button type="submit" class="flex items-center justify-center w-full px-4 py-2 bg-indigo-600 text-white font-medium text-sm rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
-                    <svg class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11H9v4h4v-2H10v-2z" clip-rule="evenodd" />
-                    </svg>
-                    Add To-Do
-                </button>
-            </div>
+                    <div class="mb-4">
+                        <input type="text" name="user" class="border border-gray-300 p-2 rounded w-full" placeholder="User" />
+                    </div>
+                    <div class="mb-4">
+                        <input type="text" name="title" class="border border-gray-300 p-2 rounded w-full" placeholder="To-Do" />
+                    </div>
+                    <div class="mb-4">
+                        <select name="status" id="status" class="border border-gray-300 p-2 rounded w-full" placeholder="Status">
+                            <option value="" disabled selected hidden>Status</option>
+                            <option class="text-yellow-500" value="pending">Pending</option>
+                            <option class="text-blue-500" value="in_progress">In Progress</option>
+                            <option class="text-green-500" value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="start_date" class="block text-sm font-medium text-gray-700">Start Date</label>
+                        <input type="text" id="start_date" name="start_date" class="border border-gray-300 p-2 rounded w-full" placeholder="dd/mm/aaaa" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="end_date" class="block text-sm font-medium text-gray-700">End Date</label>
+                        <input type="text" id="end_date" name="end_date" class="border border-gray-300 p-2 rounded w-full" placeholder="dd/mm/aaaa" />
+                    </div>
+                        
+                    <div>
+                        <button type="submit" class="flex items-center justify-center w-full px-4 py-2 bg-indigo-600 text-white font-medium text-sm rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                            <svg class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11H9v4h4v-2H10v-2z" clip-rule="evenodd" />
+                            </svg>
+                            Add To-Do
+                        </button>
+                    </div>
 
-        </form>
+                </form>
+            </div>
 
         <a href="<?php echo WEB_ROOT ?>" class="inline-block mt-6">
             <button class="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 ease-in-out">
