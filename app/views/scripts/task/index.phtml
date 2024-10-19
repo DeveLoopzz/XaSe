@@ -18,6 +18,7 @@
         <div id="menu-content"></div>
     </div>
 </div>
+<p>Project made by Sergio & Xavi</p>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -33,9 +34,9 @@
             } else if (selectedMenu === 'READ') {
                 window.location.href = '<?php echo WEB_ROOT; ?>/read';
             } else if (selectedMenu === 'UPDATE') {
-                window.location.href = 'update.phtml';
+                window.location.href = '<?php echo WEB_ROOT; ?>/update';
             } else if (selectedMenu === 'DELETE') {
-                window.location.href = 'delete.phtml';
+                window.location.href = '<?php echo WEB_ROOT; ?>/delete';
             }
         });
     });
