@@ -1,0 +1,8 @@
+app/models/data.json
+app/views/scripts/task/confirmDelete.phtml
+app/views/scripts/task/confirmUpdate.phtml
+app/views/scripts/task/delete.phtml
+app/views/scripts/task/successDelete.phtml
+app/views/scripts/task/successUpdate.phtml
+app/views/scripts/task/update.phtml
+config/README.md
