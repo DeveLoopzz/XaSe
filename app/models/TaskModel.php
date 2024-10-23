@@ -19,6 +19,10 @@ class TaskModel {
             $tasks = $this->readTasks();
             $tasks[] = $newTask;
 
+            if(!file_exists($this->jsonFile)){
+                fopen($this->jsonFile, 'w');
+            }
+
             if(file_put_contents($this->jsonFile, json_encode($tasks, JSON_PRETTY_PRINT))){
                 return true;
             }else{
